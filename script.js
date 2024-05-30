@@ -1,6 +1,12 @@
-var t = document.getElementsByTagName('main')[0];
+var root = document.querySelector(':root');
+var main = document.getElementsByTagName('main')[0];
 
-document.documentElement.onmousemove = (e) => {
-  t.style.webkitTransform = t.style.transform = 'rotateY(' + (((e.pageX / screen.width) - .25 ) * 90) + 'deg) rotateX(' + (((e.pageY / screen.width) - .25 ) * -90) + 'deg)';    
+document.onmousemove = (e) => {
+    if (main.matches(':hover')) {
+        main.style.transform = 'translate(-50%, -50%) rotateY(0deg) rotateX(0deg)';
+    } else {
+        main.style.webkitTransform = main.style.transform = 'translate(-50%, -50%) ' +
+            'rotateY(' + ( (e.pageX / window.innerWidth - .5 ) * 80) + 'deg) ' +
+            'rotateX(' + ( (e.pageY / window.innerHeight- .5 ) * -80) + 'deg)';    
+    }
 };
-
