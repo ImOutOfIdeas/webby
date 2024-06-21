@@ -1,52 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap');
+@font-face {
+  font-family: jacquard;
+  src: url("./fonts/Jacquard_24/Jacquard24-Regular.ttf");
+}
+
+@font-face {
+  font-family: inter;
+  src: url("./fonts/Inter/static/Inter-Regular.ttf");
+}
 
 .inter {
-  font-family: "Inter", sans-serif;
+  font-family: inter, sans-serif;
   font-weight: 500;
   font-style: normal;
 }
 
 .jacquard {
-  font-family: "Jacquard 12", system-ui;
+  font-family: jacquard, system-ui;
   font-weight: 400;
   font-style: normal;
 }
 
 :root {
-    --bg-col: #292a2b;
-    --hl-col: #ff6b6b;
-    --h: 3.5em; /* height of red band */
-}
-
-body{
-    background: white; 
+  --bg-col: #292a2b;
+  --hl-col: #cf6679;
+  --h: 3.5em; /* height of red band */
 }
 
 main{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) translateZ(0px);
-    transform-style: preserve-3d;
-    
-    background: linear-gradient(rgba(255,107,107,1) 0%,
-                                rgba(255,107,107,1) var(--h),
-                                rgba(0, 0, 0, 1) var(--h),
-                                rgba(0, 0, 0, 1) calc(var(--h) + 2px),
-                                rgba(255,255,255,0) var(--h));
-    width: 450px;
-    padding: 0 3em;
-    border: 2px solid #000;
-    border-radius: 15px; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateZ(0px);
+  transform-style: preserve-3d;
 
-    transition: transform 100ms;
+  background: linear-gradient(rgba(255,107,107,1) 0%,
+  rgba(255,107,107,1) var(--h),
+  rgba(0, 0, 0, 1) var(--h),
+  rgba(0, 0, 0, 1) calc(var(--h) + 2px),
+  rgba(255,255,255,0) var(--h));
+  width: 450px;
+  padding: 0 3em;
+  border: 2px solid;
+  border-radius: 15px; 
+
+  transition: transform 100ms;
 }
 main > h3 {font-weight: 400;}
 
 main > * {
-    transform: translateZ(150px);
-    animation: float 800ms ease-in-out alternate infinite;
+  transform: translateZ(150px);
+  animation: float 800ms ease-in-out alternate infinite;
 }
 main *:nth-child(1) {animation-delay: 100ms;}
 main *:nth-child(2) {animation-delay: 200ms;}
@@ -54,18 +57,20 @@ main *:nth-child(3) {animation-delay: 300ms;}
 main *:nth-child(4) {animation-delay: 400ms;}
 
 .quote {
-    margin-top: 1em;
-    padding: 15px;
-    font-size: 2.5em;
-    line-height: 0.9;
+  margin-top: 1em;
+  padding: 15px;
+  font-size: 2.5em;
+  line-height: 0.9;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+ol {
+  padding: 0;
 }
 
 @keyframes float {
-    from { transform: translateZ(150px); }
-    to   { transform: translateZ(50px); }
+  from { transform: translateZ(150px); }
+  to   { transform: translateZ(50px); }
 }
+
+/* @media(prefers-color-scheme:dark) {} */
+/* @media(prefers-color-scheme:light) {} */
