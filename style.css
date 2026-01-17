@@ -26,9 +26,10 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 1fr);
-}
-.grid-container>* {
-    border: 2px solid black;
+
+    >* {
+        border: 2px solid black;
+    }
 }
 
 .logo {
