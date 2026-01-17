@@ -28,7 +28,7 @@ body {
     grid-template-rows: repeat(6, 1fr);
 
     >* {
-        border: 2px solid black;
+        border: 2px solid transparent;
     }
 }
 
